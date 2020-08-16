@@ -1,3 +1,5 @@
+{% extends 'portfolio/base.html'  %}
+{%  block content %}
 
 <h1>Pooja's Blogs</h1>
 
@@ -12,3 +14,4 @@
 <p>{{ blog.description|safe|truncatechars:100 }}</p>
 
 {%  endfor  %}
+{% endblock  %}
