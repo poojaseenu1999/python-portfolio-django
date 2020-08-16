@@ -1,6 +1,8 @@
 
 <h1>Pooja's Blogs</h1>
 
+<h2>Pooja has written {{ blogs.count }}  blogs.</h2>
+
 {% for blog in blogs %}
 
 <a href="{% url 'blog:detail' blog.id %}"><h1>{{ blog.title  }}</h1></a>
