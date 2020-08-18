@@ -1,65 +1,62 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Pooja Srinivasan Portfolio</title>
-  </head>
-  <body>
-    <!-- Image and text -->
-    <br>
-    <br>
-  <nav class="navbar navbar-light ">
-    <a class="navbar-brand" href="http://127.0.0.1:8000/">
-      <img src="portfolio_page/images/download.png" width="30" height="30" class="d-inline-block align-top" alt="" loading="lazy">
-      <h3>Pooja srinivasan</h3>
-    </a>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-  <nav class="navbar navbar-expand-lg navbar-light ">
-    <a class="navbar-brand" href="http://127.0.0.1:8000/">Home</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="#">About <span class="sr-only">(current)</span></a>
-        <a class="nav-link" href="http://127.0.0.1:8000/blog/">Blogs</a>
-        <a class="nav-link" href="#">Contact</a>
+  <link rel="stylesheet" href="{% static "portfolio/custom.css" %}">
 
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/png" href="{% static "portfolio/download.png" %}">
+
+  <title>Pooja srinivasan</title>
+</head>
+
+<body>
+
+  <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static "portfolio/download.png" %}" width="30" height="30" class="d-inline-block align-top" alt="">
+        <span>POOJA SRINIVASAN</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% static "portfolio/pooja.pdf" %}">Resume</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="linkedin.com/in/pooja-srinivasan-584511191" target="_blank">LinkedIn</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/poojaseenu1999" target="_blank">Github</a>
+          </li>
+          <li>
+            <a role="button" href="{% url 'blog:all_blogs' %}" class="btn btn-primary">Blog</a>
+          </li>
+        </ul>
       </div>
     </div>
   </nav>
-  </nav>
-
-{%  block content %} {%  endblock %}
-<!-- Optional JavaScript -->
-<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
-<div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
+  <div class="container">
+    {% block content %}{% endblock %}
   </div>
-</div>
 
-
-
-
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
+
 </html>
